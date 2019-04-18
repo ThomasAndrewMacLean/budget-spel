@@ -1,47 +1,55 @@
 [{
-    "name":"Huur 2 kamer appartement",
-    "price":650,
-    "priceString":"€650/maand",
-    "obligatory": true
-},
-{
-    "name":"Gemeenschappelijke kosten appartementsgebouw",
-    "price":50,
-    "priceString":"€50/maand",
-    "obligatory": true
-},
-{
-    "name":"Brandverzekering",
-    "price":25,
-    "priceString":"€25/maand",
-    "obligatory": true
-},
-{
-    "name":"Gas en elektriciteit",
-    "price":140,
-    "priceString":"€140/maand",
-    "obligatory": true
-},
-{
-    "name":"Hospitalisatieverzekering",
-    "price":25,
-    "priceString":"€25/maand",
-    "obligatory": false
-},
-{
-    "name":"Nieuwe schoenen voor Naomi",
-    "price":20,
-    "priceString":"€20",
-    "obligatory": false
-}
-,{
-    "name":"2 broeken voor Jeremy",
-    "price":15,
-    "priceString":"€15",
-    "obligatory": false
-},{
-    "name":"Feestmaaltijd voor bezoek van familie",
-    "price":20,
-    "priceString":"€20",
-    "obligatory": false
-}]
+        "id": 1,
+        "name": "Huur 2 kamer appartement",
+        "price": 650,
+        "priceString": "€650/maand",
+        "obligatory": true
+    },
+    {
+        "id": 2,
+        "name": "Gemeenschappelijke kosten appartementsgebouw",
+        "price": 50,
+        "priceString": "€50/maand",
+        "obligatory": true
+    },
+    {
+        "id": 3,
+        "name": "Brandverzekering",
+        "price": 25,
+        "priceString": "€25/maand",
+        "obligatory": true
+    },
+    {
+        "id": 4,
+        "name": "Gas en elektriciteit",
+        "price": 140,
+        "priceString": "€140/maand",
+        "obligatory": true
+    },
+    {
+        "id": 5,
+        "name": "Hospitalisatieverzekering",
+        "price": 25,
+        "priceString": "€25/maand",
+        "obligatory": false
+    },
+    {
+        "id": 6,
+        "name": "Nieuwe schoenen voor Naomi",
+        "price": 20,
+        "priceString": "€20",
+        "obligatory": false
+    }, {
+        "id": 7,
+        "name": "2 broeken voor Jeremy",
+        "price": 15,
+        "priceString": "€15",
+        "obligatory": false
+    }, {
+        "id": 8,
+        "name": "Feestmaaltijd voor bezoek van familie",
+        "price": 20,
+        "priceString": "€20",
+        "obligatory": false
+    }
+]
