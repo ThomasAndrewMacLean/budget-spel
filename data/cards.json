@@ -51,5 +51,364 @@
         "price": 20,
         "priceString": "€20",
         "obligatory": false
+    },
+
+
+
+
+    {
+        "id": 9,
+        "name": "Water",
+        "price": 20,
+        "priceString": "€20/maand",
+        "obligatory": true
+    }, {
+        "id": 10,
+        "name": "Familiale verzekering",
+        "price": 16.66,
+        "priceString": "€16.66 (maandelijks sparen)",
+        "obligatory": true
+    }, {
+        "id": 11,
+        "name": "Zorgverzekering",
+        "price": 8.5,
+        "priceString": "€8.5 (maandelijks sparen)",
+        "obligatory": true
+    }, {
+        "id": 12,
+        "name": "Mutualiteitsbijdrage",
+        "price": 7.3,
+        "priceString": "€7.30/maand",
+        "obligatory": true
+    }, {
+        "id": 13,
+        "name": "Tandartsbezoek Naomi",
+        "price": 30,
+        "priceString": "€30",
+        "obligatory": false
+    }, {
+        "id": 14,
+        "name": "Verzorginsproducten voor de huid van Jeremy",
+        "price": 15,
+        "priceString": "€15",
+        "obligatory": false
+    }, {
+        "id": 15,
+        "name": "True en broek voor papa i.f.v. sollicitatiegesprek",
+        "price": 35,
+        "priceString": "€35",
+        "obligatory": false
+    }, {
+        "id": 16,
+        "name": "Sparen voor reis in de zomervakantie",
+        "price": 50,
+        "priceString": "€50",
+        "obligatory": false
+    }, {
+        "id": 17,
+        "name": "Feestmaaltijd voor bezoek van familie",
+        "price": 20,
+        "priceString": "€20",
+        "obligatory": false
+    }, {
+        "id": 18,
+        "name": "Semestriële bijdrage balletles Naomi",
+        "price": 132,
+        "priceString": "€132",
+        "obligatory": false
+    }, {
+        "id": 19,
+        "name": "Maandelijks betaling kleuterturnen",
+        "price": 10,
+        "priceString": "€10",
+        "obligatory": false
+    }, {
+        "id": 20,
+        "name": "Schoolfactuur beide kinderen Warme maaltijden inbegrepen",
+        "price": 100,
+        "priceString": "€100",
+        "obligatory": false
+    }, {
+        "id": 21,
+        "name": "Kapper mama",
+        "price": 24,
+        "priceString": "€24",
+        "obligatory": false
+    }
+
+
+
+
+    , {
+        "id": 22,
+        "name": "Verjaardagscadeau Naomi Play Doh",
+        "price": 15,
+        "priceString": "€15",
+        "obligatory": false
+    }, {
+        "id": 23,
+        "name": "Verjaardagscadeau Naomi Fiets 2e hands",
+        "price": 75,
+        "priceString": "€75",
+        "obligatory": false
+    }, {
+        "id": 24,
+        "name": "Verjaardagscadeau Naomi Nieuwe fiets",
+        "price": 300,
+        "priceString": "€300",
+        "obligatory": false
+    }, {
+        "id": 25,
+        "name": "Cadeau voor vriendinnetje op verjaardagsfeest",
+        "price": 10,
+        "priceString": "€10",
+        "obligatory": false
+    }, {
+        "id": 26,
+        "name": "Wafelverkoop op school voor sponsoren tweedaagse",
+        "price": 6,
+        "priceString": "€6",
+        "obligatory": false
+    }, {
+        "id": 27,
+        "name": "GSM-abonnement papa",
+        "price": 45,
+        "priceString": "€45",
+        "obligatory": false
+    }, {
+        "id": 28,
+        "name": "GSM-abonnement mama",
+        "price": 15,
+        "priceString": "€15",
+        "obligatory": false
+    }, {
+        "id": 29,
+        "name": "Internet + digitale TV",
+        "price": 50,
+        "priceString": "€50",
+        "obligatory": false
+    }, {
+        "id": 30,
+        "name": "Omnipass jaarabonnement De Lijn",
+        "price": 306,
+        "priceString": "€306",
+        "obligatory": false
+    }, {
+        "id": 31,
+        "name": "Buzzy Pass jaarabonnement De Lijn",
+        "price": 52,
+        "priceString": "€52",
+        "obligatory": false
+    }, {
+        "id": 32,
+        "name": "Doktersbezoek beide kinderen",
+        "price": 46,
+        "priceString": "€46",
+        "obligatory": false
+    }, {
+        "id": 33,
+        "name": "Hoestsiroop",
+        "price": 14,
+        "priceString": "€14",
+        "obligatory": false
+    }, {
+        "id": 34,
+        "name": "Nachtpampers Jeremy",
+        "price": 24,
+        "priceString": "€24",
+        "obligatory": false
+    }, {
+        "id": 35,
+        "name": "Uitstap Sealife Blankenberge",
+        "price": 56.5,
+        "priceString": "€56,50",
+        "obligatory": false
+    }, {
+        "id": 36,
+        "name": "Zwemmen met papa",
+        "price": 5.25,
+        "priceString": "€5,25",
+        "obligatory": false
+    }, {
+        "id": 37,
+        "name": "Boete bibliotheek",
+        "price": 12,
+        "priceString": "€12",
+        "obligatory": false
+    }, {
+        "id": 38,
+        "name": "Anticonceptiepil mama",
+        "price": 32,
+        "priceString": "€32",
+        "obligatory": false
+    }, {
+        "id": 39,
+        "name": "Condooms 12 stuks",
+        "price": 8,
+        "priceString": "€8",
+        "obligatory": false
+    }, {
+        "id": 40,
+        "name": "Sparen voor een auto",
+        "price": 50,
+        "priceString": "€50",
+        "obligatory": false
+    }, {
+        "id": 41,
+        "name": "Sparen voor onverwachte kosten",
+        "price": 50,
+        "priceString": "€50",
+        "obligatory": false
+    }, {
+        "id": 42,
+        "name": "Sparen voor huurwaarborg",
+        "price": 50,
+        "priceString": "€50",
+        "obligatory": false
+    }, {
+        "id": 43,
+        "name": "Sparen voor huurwaarborg",
+        "price": 50,
+        "priceString": "€50",
+        "obligatory": false
+    }, {
+        "id": 44,
+        "name": "Herstellen fietsband papa",
+        "price": 30,
+        "priceString": "€30",
+        "obligatory": false
+    }, {
+        "id": 45,
+        "name": "Carnavalsfeest op school (inkom)",
+        "price": 6,
+        "priceString": "€6",
+        "obligatory": false
+    }, {
+        "id": 46,
+        "name": "Verkleedaccessoires Carnaval kinderen",
+        "price": 7,
+        "priceString": "€7",
+        "obligatory": false
+    }, {
+        "id": 47,
+        "name": "Verkleedpakjes kinderen Frozen en Ninja Turtles",
+        "price": 30,
+        "priceString": "€30",
+        "obligatory": false
+    }
+
+
+
+
+    , {
+        "id": 48,
+        "name": "Sigaretten papa",
+        "price": 65,
+        "priceString": "€65",
+        "obligatory": false
+    }, {
+        "id": 49,
+        "name": "Antirookpleisters papa",
+        "price": 73,
+        "priceString": "€73",
+        "obligatory": false
+    }, {
+        "id": 50,
+        "name": "Logopedie Naomi",
+        "price": 40,
+        "priceString": "€40",
+        "obligatory": false
+    }, {
+        "id": 51,
+        "name": "Sparen voor wasmachine",
+        "price": 50,
+        "priceString": "€50",
+        "obligatory": false
+    }, {
+        "id": 52,
+        "name": "3 wasbeurten wasserette",
+        "price": 13.5,
+        "priceString": "€13,50",
+        "obligatory": false
+    }, {
+        "id": 53,
+        "name": "Kleutersportkamp Jeremy",
+        "price": 25,
+        "priceString": "€25",
+        "obligatory": false
+    }, {
+        "id": 54,
+        "name": "Omnicircussportkamp Naomi",
+        "price": 25,
+        "priceString": "€25",
+        "obligatory": false
+    }, {
+        "id": 55,
+        "name": "3 wasbeurten wasserette",
+        "price": 13.5,
+        "priceString": "€13,50",
+        "obligatory": false
+    }, {
+        "id": 56,
+        "name": "3 wasbeurten wasserette",
+        "price": 13.5,
+        "priceString": "€13,50",
+        "obligatory": false
+    }, {
+        "id": 57,
+        "name": "3 wasbeurten wasserette",
+        "price": 13.5,
+        "priceString": "€13,50",
+        "obligatory": false
+    }, {
+        "id": 58,
+        "name": "Drankje na het zwemmen",
+        "price": 8,
+        "priceString": "€8",
+        "obligatory": false
+    }, {
+        "id": 59,
+        "name": "Carnavalsfeest op school (maaltijd)",
+        "price": 32,
+        "priceString": "€32",
+        "obligatory": false
+    }, {
+        "id": 60,
+        "name": "Lunch met klasgenoten mama",
+        "price": 12.5,
+        "priceString": "€12,50",
+        "obligatory": false
+    }, {
+        "id": 61,
+        "name": "Voetbalmatch papa",
+        "price": 30,
+        "priceString": "€30",
+        "obligatory": false
+    }, {
+        "id": 62,
+        "name": "Etentje valentijn",
+        "price": 40,
+        "priceString": "€40",
+        "obligatory": false
+    }
+
+    , {
+        "id": 63,
+        "name": "Sparen voor wasmachine",
+        "price": 50,
+        "priceString": "€50",
+        "obligatory": false
+    }, {
+        "id": 64,
+        "name": "Sparen voor auto",
+        "price": 50,
+        "priceString": "€50",
+        "obligatory": false
+    }, {
+        "id": 65,
+        "name": "Sparen voor reis in de zomervakantie",
+        "price": 50,
+        "priceString": "€50",
+        "obligatory": false
     }
 ]
