@@ -4,6 +4,7 @@
     "description": "",
     "main": "index.js",
     "scripts": {
+        "lint": "eslint src --fix",
         "dev": "cp -R ./static ./dist && parcel src/index.html",
         "build": "cp -R ./static ./dist && parcel build src/index.html"
     },
@@ -19,11 +20,13 @@
     },
     "homepage": "https://github.com/ThomasAndrewMacLean/budget-spel#readme",
     "dependencies": {
+        "eslint-plugin-vue": "^5.2.2",
         "vue": "^2.6.10",
         "vue-hot-reload-api": "^2.3.3"
     },
     "devDependencies": {
         "@vue/component-compiler-utils": "^3.0.0",
+        "eslint": "^5.16.0",
         "less": "^3.9.0",
         "parcel-bundler": "^1.12.3",
         "vue-template-compiler": "^2.6.10"
