@@ -1,13 +1,64 @@
 <template>
     <div class="wrapper">
-        <span class="chip mdl-chip mdl-chip--contact">
-            <span class="mdl-chip__contact mdl-color--teal mdl-color-text--white">€</span>
-            <span class="mdl-chip__text">{{runningTotal}}/{{totalBudget}}</span>
-        </span>
+        <div class="page" v-if="currentPage === pages.landingpage && intro">
+            <h2>{{intro.titel}}</h2>
+            <p>{{intro.text}}</p>
+            <button @click="currentPage = pages.intro"
+                class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+                Button
+            </button>
 
-        <card v-if="!finish" v-on:addToB="addToBasket" :data="cards[cardIndex]"></card>
-        <div v-if="finish">
-            <button @click="reload" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+        </div>
+
+        <div class="overflow" v-if="currentPage === pages.intro">
+            <p>{{intro.mama}}</p>
+            <p>{{intro.papa}}</p>
+            <p>{{intro.dochter}}</p>
+            <p>{{intro.zoontje}}</p>
+            <p>{{intro.zus}}</p>
+
+            <button @click="currentPage = pages.cards"
+                class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
+                Start
+            </button>
+
+        </div>
+
+        <div class="page" v-if="currentPage === pages.cards">
+            <button id="basket" @click="showShoppingcart"
+                class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+                <i class="material-icons">shopping_cart</i>
+            </button>
+            <span class="chip mdl-chip mdl-chip--contact">
+                <span class="mdl-chip__contact mdl-color--teal mdl-color-text--white">€</span>
+                <span class="mdl-chip__text">{{runningTotal}}/{{totalBudget}}</span>
+            </span>
+            <card v-if="cards.length" v-on:addToB="addToBasket" :data="cards[cardIndex]"></card>
+        </div>
+
+        <div class="page overflow" v-if="currentPage === pages.shoppingcart">
+            <h2>shoppingcart</h2>
+            <button id="basket" @click="showCards"
+                class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+                <i class="material-icons">shopping_cart</i>
+            </button>
+            <ul class="demo-list-control mdl-list">
+                <li v-for="card in handledCards" v-bind:key="card.id" class="mdl-list__item">
+                    <span class="mdl-list__item-primary-content">
+                        {{card.name}} </span>
+                    <span class="mdl-list__item-secondary-action">
+                        <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="list-checkbox-1">
+                            <input type="checkbox" id="list-checkbox-1" class="mdl-checkbox__input"
+                                :checked="!!basket.find(x => x.id=card.id)" />
+                        </label>
+                    </span>
+                </li>
+            </ul>
+        </div>
+
+        <div class="page" v-if="currentPage === pages.summary">
+            <button @click="reload"
+                class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
                 <i class="material-icons">autorenew</i>
             </button>
         </div>
@@ -16,38 +67,59 @@
 
 <script>
     import {
-        BUDGET
+        BUDGET,
+        pages
     } from './constants';
-    const cards = require('../data/cards.json').sort(() => Math.random() - 0.5);;
+
     import card from './Card';
+
     export default {
         name: 'App',
         data() {
             return {
                 title: 'Budget Spel 💶',
                 totalBudget: BUDGET,
-                cards,
+                cards: [],
+                intro: null,
                 basket: [],
+                pages,
                 cardIndex: 0,
-                finish: false,
+                currentPage: pages.cards,
             };
         },
         mounted() {
-            // fetch('https://z0l80enr3f.execute-api.eu-west-1.amazonaws.com/latest/funds')
-            //   .then(x => x.json())
-            //   .then(funds => (this.funds = funds));
+            // This can be swappet out later for api call to Database
+            const cards = require('../data/cards.json').sort(() => Math.random() - 0.5);
+            this.cards = cards;
+            const intro = require('../data/intro.json');
+            this.intro = intro;
         },
         computed: {
             runningTotal: function () {
                 return this.basket.reduce((a, b) => (a += b.price), 0);
             },
+            handledCards: function () {
+                const newCards = [...this.cards];
+                return newCards.splice(0, this.cardIndex);
+            }
         },
         components: {
-            card
+            card,
         },
         methods: {
+            showShoppingcart() {
+                this.currentPage = this.pages.shoppingcart;
+            },
+            showCards() {
+                this.currentPage = this.pages.cards;
+            },
             reload() {
-                window.location.reload(true);
+                this.currentpage = this.pages.landingpage;
+                this.cardIndex = 0;
+                this.basket = [];
+
+                //hard reload, prob not needed here?
+                //window.location.reload(true);
             },
             addToBasket(item) {
                 if (!item) {
@@ -69,9 +141,9 @@
                     this.cardIndex = newIndex;
                 }
                 if (newIndex === this.cards.length) {
-                    this.finish = true;
+                    this.currentPage = this.pages.summary;
                 }
-            }
+            },
         },
     };
 </script>
@@ -89,5 +161,26 @@
 
     .chip {
         margin: 4rem;
+    }
+
+    .page {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100vw;
+    }
+
+    .overflow {
+        overflow: auto;
+    }
+
+    .demo-list-control {
+        width: 300px;
+    }
+
+    #basket {
+        position: absolute;
+        left: 2rem;
+        top: 1rem;
     }
 </style>

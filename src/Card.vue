@@ -19,7 +19,7 @@
             <div class="mdl-card__actions mdl-card--border">
                 <a @click="$emit('addToB', data)"
                     class="float-right mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
-                    Kopen <i class="material-icons">shopping_cart</i> </a>
+                    Kopen <i class="material-icons">add</i> </a>
                 <a :disabled="data.obligatory" @click="!data.obligatory && $emit('addToB')"
                     class="float-right mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
                     Overslaan
@@ -37,7 +37,7 @@
                 required: true,
             }
         }
-    }
+    };
 </script>
 
 <style scoped>
