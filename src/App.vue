@@ -43,13 +43,13 @@
                 <i class="material-icons">shopping_cart</i>
             </button>
             <ul class="demo-list-control mdl-list">
-                <li v-for="card in handledCards" v-bind:key="card.id" class="mdl-list__item">
+                <li v-for="card in history" v-bind:key="card.id" class="mdl-list__item">
                     <span class="mdl-list__item-primary-content">
-                        {{card.name}} </span>
+                        {{card.name}} {{basket.indexOf(card)}}</span>
                     <span class="mdl-list__item-secondary-action">
                         <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="list-checkbox-1">
                             <input type="checkbox" id="list-checkbox-1" class="mdl-checkbox__input"
-                                :checked="!!basket.find(x => x.id=card.id)" />
+                                :checked="basket.indexOf(card)>-1" />
                         </label>
                     </span>
                 </li>
@@ -80,6 +80,7 @@
                 title: 'Budget Spel 💶',
                 totalBudget: BUDGET,
                 cards: [],
+                history: [],
                 intro: null,
                 basket: [],
                 pages,
@@ -98,10 +99,10 @@
             runningTotal: function () {
                 return this.basket.reduce((a, b) => (a += b.price), 0);
             },
-            handledCards: function () {
-                const newCards = [...this.cards];
-                return newCards.splice(0, this.cardIndex);
-            }
+            // handledCards: function () {
+            //     const newCards = [...this.cards];
+            //     return newCards.splice(0, this.cardIndex);
+            // }
         },
         components: {
             card,
@@ -122,18 +123,21 @@
                 //window.location.reload(true);
             },
             addToBasket(item) {
-                if (!item) {
+                this.history.push(item.data);
+                if (!item.add) {
                     this.navigateCards(1);
                     return;
                 }
-                if (this.basket.find(basketItem => basketItem.id === item.id)) {
-                    item.bought = false;
-                    this.basket.splice(this.basket.indexOf(item), 1);
+                if (this.basket.find(basketItem => basketItem.id === item.data.id)) {
+                    this.basket.splice(this.basket.indexOf(item.data), 1);
                 } else {
-                    item.bought = true;
-                    this.basket.push(item);
+                    this.basket.push(item.data);
                 }
+
                 this.navigateCards(1);
+            },
+            removeFromBasket(item) {
+                this.basket.splice(this.basket.indexOf(item), 1);
             },
             navigateCards(amount) {
                 const newIndex = this.cardIndex + amount;

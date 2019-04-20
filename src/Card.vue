@@ -17,10 +17,10 @@
                 {{data.priceString}}
             </div>
             <div class="mdl-card__actions mdl-card--border">
-                <a @click="$emit('addToB', data)"
+                <a @click="$emit('addToB', {data, add:true})"
                     class="float-right mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
                     Kopen <i class="material-icons">add</i> </a>
-                <a :disabled="data.obligatory" @click="!data.obligatory && $emit('addToB')"
+                <a :disabled="data.obligatory" @click="!data.obligatory && $emit('addToB', {data, add:false})"
                     class="float-right mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
                     Overslaan
                 </a>
