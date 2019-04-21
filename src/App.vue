@@ -43,7 +43,8 @@
                 <i class="material-icons">shopping_cart</i>
             </button>
             <ul class="demo-list-control mdl-list">
-                <li v-for="card in history" v-bind:key="card.id" class="mdl-list__item">
+                <li v-for="card in history" @click="toggleBasket({data: card})" v-bind:key="card.id"
+                    class="mdl-list__item">
                     <span class="mdl-list__item-primary-content">
                         {{card.name}} {{basket.indexOf(card)}}</span>
                     <span class="mdl-list__item-secondary-action">
@@ -136,8 +137,12 @@
 
                 this.navigateCards(1);
             },
-            removeFromBasket(item) {
-                this.basket.splice(this.basket.indexOf(item), 1);
+            toggleBasket(item) {
+                if (this.basket.find(basketItem => basketItem.id === item.data.id)) {
+                    this.basket.splice(this.basket.indexOf(item.data), 1);
+                } else {
+                    this.basket.push(item.data);
+                }
             },
             navigateCards(amount) {
                 const newIndex = this.cardIndex + amount;
