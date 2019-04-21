@@ -29,24 +29,22 @@
                 class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
                 <i class="material-icons">shopping_cart</i>
             </button>
-            <span class="chip mdl-chip mdl-chip--contact">
-                <span class="mdl-chip__contact mdl-color--teal mdl-color-text--white">€</span>
-                <span class="mdl-chip__text">{{runningTotal}}/{{totalBudget}}</span>
-            </span>
+            <chip :runningTotal="runningTotal" :totalBudget="totalBudget"></chip>
             <card v-if="cards.length" v-on:addToB="addToBasket" :data="cards[cardIndex]"></card>
         </div>
 
         <div class="page overflow" v-if="currentPage === pages.shoppingcart">
-            <h2>shoppingcart</h2>
             <button id="basket" @click="showCards"
                 class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
                 <i class="material-icons">shopping_cart</i>
             </button>
+            <chip :runningTotal="runningTotal" :totalBudget="totalBudget"></chip>
+
             <ul class="demo-list-control mdl-list">
                 <li v-for="card in history" @click="toggleBasket({data: card})" v-bind:key="card.id"
                     class="mdl-list__item">
                     <span class="mdl-list__item-primary-content">
-                        {{card.name}} {{basket.indexOf(card)}}</span>
+                        {{card.name}}</span>
                     <span class="mdl-list__item-secondary-action">
                         <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="list-checkbox-1">
                             <input type="checkbox" id="list-checkbox-1" class="mdl-checkbox__input"
@@ -73,6 +71,7 @@
     } from './constants';
 
     import card from './Card';
+    import chip from './TotalAmountSpentChip';
 
     export default {
         name: 'App',
@@ -107,6 +106,7 @@
         },
         components: {
             card,
+            chip,
         },
         methods: {
             showShoppingcart() {
@@ -139,7 +139,9 @@
             },
             toggleBasket(item) {
                 if (this.basket.find(basketItem => basketItem.id === item.data.id)) {
-                    this.basket.splice(this.basket.indexOf(item.data), 1);
+                    if (!item.data.obligatory) {
+                        this.basket.splice(this.basket.indexOf(item.data), 1);
+                    }
                 } else {
                     this.basket.push(item.data);
                 }
