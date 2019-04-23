@@ -89,15 +89,18 @@
             };
         },
         mounted() {
-            // This can be swappet out later for api call to Database
+
+            const intro = require('../data/intro.json');
+            this.intro = intro;
             fetch(
                     'https://script.google.com/macros/s/AKfycbzZWEKSn7vkZOJ7HdORB9oWHJdDOQVxNbEK04VTLLtN0Ff9omkC/exec'
                 )
                 .then(x => x.json())
-                .then(y => (this.cards = y.data.sort(() => Math.random() - 0.5)));
+                .then(y => {
+                    this.intro = y.intro.data[0];
 
-            const intro = require('../data/intro.json');
-            this.intro = intro;
+                    (this.cards = y.cards.data.sort(() => Math.random() - 0.5));
+                });
         },
         computed: {
             runningTotal: function () {
