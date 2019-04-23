@@ -94,7 +94,7 @@
                     'https://script.google.com/macros/s/AKfycbzZWEKSn7vkZOJ7HdORB9oWHJdDOQVxNbEK04VTLLtN0Ff9omkC/exec'
                 )
                 .then(x => x.json())
-                .then(y => (this.cards = y.data));
+                .then(y => (this.cards = y.data.sort(() => Math.random() - 0.5)));
 
             const intro = require('../data/intro.json');
             this.intro = intro;
