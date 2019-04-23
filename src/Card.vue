@@ -10,7 +10,7 @@
         <!-- Square card -->
 
         <div class="demo-card-square mdl-card mdl-shadow--2dp">
-            <i class="icon-logo material-icons">attach_money</i>
+            <i class="icon-logo material-icons">{{data.icon}}</i>
             <div class="mdl-card__title mdl-card--expand">
                 <h2 class="mdl-card__title-text">{{data.name}}</h2>
             </div>
