@@ -36,14 +36,21 @@
 
             <ul class="demo-list-control mdl-list">
                 <li v-for="card in history" @click="toggleBasket({data: card})" v-bind:key="card.id"
-                    class="mdl-list__item">
-                    <span class="mdl-list__item-primary-content">{{card.name}}</span>
-                    <span class="mdl-list__item-secondary-action">
-                        <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="list-checkbox-1">
-                            <input type="checkbox" id="list-checkbox-1" class="mdl-checkbox__input"
-                                :checked="basket.indexOf(card)>-1">
-                        </label>
-                    </span>
+                    class="mdl-list__item mdl-grid">
+
+                    <div class="mdl-cell mdl-cell--1-col">
+
+                        <i v-if="basket.indexOf(card)>-1" class="material-icons">check</i>
+                    </div>
+                    <div class="mdl-cell mdl-cell--11-col mdl-cell--7-col-tablet">
+
+                        <span class="mdl-list__item-primary-content">{{card.name}}
+
+                        </span>
+
+                        <span class="pricelisttag">({{card.priceString}})</span>
+                    </div>
+
                 </li>
             </ul>
         </div>
@@ -88,7 +95,7 @@
                 )
                 .then(x => x.json())
                 .then(y => (this.cards = y.data));
- 
+
             const intro = require('../data/intro.json');
             this.intro = intro;
         },
@@ -121,9 +128,14 @@
                 //window.location.reload(true);
             },
             addToBasket(item) {
-                this.history.push(item.data);
+                if (!this.history.find(i => i.id === item.data.id)) {
+                    this.history.push(item.data);
+                }
                 if (!item.add) {
                     this.navigateCards(1);
+                    return;
+                }
+                if (this.runningTotal + item.data.price > this.totalBudget) {
                     return;
                 }
                 if (this.basket.find(basketItem => basketItem.id === item.data.id)) {
@@ -140,6 +152,9 @@
                         this.basket.splice(this.basket.indexOf(item.data), 1);
                     }
                 } else {
+                    if (this.runningTotal + item.data.price > this.totalBudget) {
+                        return;
+                    }
                     this.basket.push(item.data);
                 }
             },
@@ -157,6 +172,10 @@
 </script>
 
 <style lang="less" scoped>
+    .pricelisttag {
+        font-size: 0.9rem;
+    }
+
     .wrapper {
         display: flex;
         flex-direction: column;
