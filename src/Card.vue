@@ -25,6 +25,11 @@
                     Overslaan
                 </a>
             </div>
+            <div v-if="data.starText" class="mdl-card__menu">
+                <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+                    <i class="material-icons">star_border</i>
+                </button>
+            </div>
         </div>
     </div>
 </template>
