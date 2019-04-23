@@ -85,7 +85,7 @@
                 basket: [],
                 pages,
                 cardIndex: 0,
-                currentPage: pages.cards,
+                currentPage: pages.landingpage,
             };
         },
         mounted() {
