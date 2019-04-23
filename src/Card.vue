@@ -10,6 +10,7 @@
         <!-- Square card -->
 
         <div class="demo-card-square mdl-card mdl-shadow--2dp">
+            <i class="icon-logo material-icons">attach_money</i>
             <div class="mdl-card__title mdl-card--expand">
                 <h2 class="mdl-card__title-text">{{data.name}}</h2>
             </div>
@@ -59,5 +60,14 @@
 
     .float-right {
         float: right;
+    }
+
+    .icon-logo {
+        color: white;
+        position: absolute;
+        top: 1rem;
+        right: 2rem;
+        opacity: 0.5;
+        font-size: 7rem;
     }
 </style>

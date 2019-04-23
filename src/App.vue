@@ -1,13 +1,13 @@
 <template>
     <div class="wrapper">
-        <div class="page" v-if="currentPage === pages.landingpage && intro">
+        <div class="page text" v-if="currentPage === pages.landingpage && intro">
             <h2>{{intro.titel}}</h2>
             <p>{{intro.text}}</p>
             <button @click="currentPage = pages.intro"
                 class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Button</button>
         </div>
 
-        <div class="overflow" v-if="currentPage === pages.intro">
+        <div class="overflow text" v-if="currentPage === pages.intro">
             <p>{{intro.mama}}</p>
             <p>{{intro.papa}}</p>
             <p>{{intro.dochter}}</p>
@@ -209,5 +209,10 @@
         position: absolute;
         left: 2rem;
         top: 1rem;
+    }
+
+    .text {
+        width: 90vw;
+        max-width: 500px
     }
 </style>
