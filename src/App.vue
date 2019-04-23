@@ -56,6 +56,10 @@
         </div>
 
         <div class="page" v-if="currentPage === pages.summary">
+            <button id="basket" @click="showShoppingcart"
+                class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+                <i class="material-icons">shopping_cart</i>
+            </button>
             <button @click="reload"
                 class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
                 <i class="material-icons">autorenew</i>
