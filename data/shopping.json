@@ -1,0 +1,17 @@
+[
+  {
+    "name": "witte producten",
+    "pricestring": "€35",
+    "price": 35
+  },
+  {
+    "name": "huismerk producten",
+    "pricestring": "€55",
+    "price": 55
+  },
+  {
+    "name": "merk producten",
+    "pricestring": "€80",
+    "price": 80
+  }
+]
